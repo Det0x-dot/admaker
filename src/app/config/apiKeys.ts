@@ -5,19 +5,19 @@ export interface ApiKeyConfig {
 
 export const API_KEYS: ApiKeyConfig[] = [
   {
-    username: "goku",
-    key: process.env.NEXT_PUBLIC_API_KEY_GOKU || ''
+    username: "superman",
+    key: process.env.NEXT_PUBLIC_API_KEY_SUPERMAN || ''
   },
   {
-    username: "vegeta",
-    key: process.env.NEXT_PUBLIC_API_KEY_VEGETA || ''
+    username: "stonner",
+    key: process.env.NEXT_PUBLIC_API_KEY_STONNER || ''
   },
   {
-    username: "gohan",
-    key: process.env.NEXT_PUBLIC_API_KEY_GOHAN || ''
+    username: "warrior",
+    key: process.env.NEXT_PUBLIC_API_KEY_WARRIOR || ''
   },
   {
-    username: "trunks",
-    key: process.env.NEXT_PUBLIC_API_KEY_TRUNKS || ''
+    username: "nosferatu",
+    key: process.env.NEXT_PUBLIC_API_KEY_NOSFERATU || ''
   }
 ];
