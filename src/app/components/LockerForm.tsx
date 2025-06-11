@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { ExclamationCircleIcon, CheckCircleIcon } from '@heroicons/react/24/outline';
-import { API_KEYS, ApiKeyConfig } from '../config/apiKeys';
+import { API_KEYS } from '../config/apiKeys';
 
 interface LockerFormData {
   username: string;
@@ -13,7 +13,15 @@ interface LockerFormData {
 interface LockerResponse {
   id?: string;
   error?: string;
-  [key: string]: any;
+  title?: string;
+  target?: string;
+  status?: string;
+  createdAt?: string;
+  updatedAt?: string;
+  url?: string;
+  data?: {
+    url: string;
+  };
 }
 
 export default function LockerForm() {
@@ -51,7 +59,7 @@ export default function LockerForm() {
         // If we have a successful response with data
         setResult(data);
       }
-    } catch (error) {
+    } catch (_error) {
       setResult({ error: 'Network error. Please check your connection and try again.' });
     } finally {
       setLoading(false);
@@ -163,8 +171,11 @@ export default function LockerForm() {
                       />
                       <button
                         onClick={() => {
-                          navigator.clipboard.writeText(result.data?.url || result.url);
-                          // You could add a toast notification here
+                          const url = result.data?.url || result.url;
+                          if (url) {
+                            navigator.clipboard.writeText(url);
+                            // You could add a toast notification here
+                          }
                         }}
                         className="px-3 py-1 text-xs font-medium text-green-700 hover:text-green-800 bg-green-50 hover:bg-green-100 rounded-md transition-colors"
                       >
