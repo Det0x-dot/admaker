@@ -6,7 +6,7 @@ export default function Home() {
       <main className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 tracking-tight sm:text-5xl">
-            Lockr API Integration
+            Lockr Adlink Maker
           </h1>
           <p className="mt-3 text-lg text-gray-500">
             Create and manage your lockers easily
